@@ -1,8 +1,14 @@
 # add stages here 
-# stages:
-#   stage_name:
-#     cmd: python src/stage_01______.py
-#     deps:
-#     - src/stage_01______.py
-#     outs:
-#     - output_data_of_file_path
+stages:
+  stage_name:
+    cmd: python src/stage_01_prepare.py --config=configs/config.yaml --params=params.yaml
+    deps:
+      - src/stage_01_prepare.py
+      - configs/config.yaml
+      - params.yaml
+      - data/data.xml
+      - src/utils/common.py
+      - src/utils/data_mgmt.py
+    outs:
+      - artifacts/prepare/train.tsv
+      - artifacts/prepare/test.tsv

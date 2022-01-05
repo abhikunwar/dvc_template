@@ -1,0 +1,30 @@
+schema: '2.0'
+stages:
+  stage_name:
+    cmd: python src/stage_01_prepare.py --config=configs/config.yaml --params=params.yaml
+    deps:
+    - path: configs/config.yaml
+      md5: cf2c905df1c4a39da97cd5552d4ed33f
+      size: 228
+    - path: data/data.xml
+      md5: a304afb96060aad90176268345e10355
+      size: 37891850
+    - path: params.yaml
+      md5: e3f8fdabac12be58f5aaafca2d49e14b
+      size: 69
+    - path: src/stage_01_prepare.py
+      md5: 428dc6bcf024e720a42f13fa1a55c774
+      size: 2205
+    - path: src/utils/common.py
+      md5: d162961d817182441383bdb0e674e685
+      size: 675
+    - path: src/utils/data_mgmt.py
+      md5: c431995350eb4ed52fc8e93d2cf3e876
+      size: 825
+    outs:
+    - path: artifacts/prepare/test.tsv
+      md5: 9f2b8ff712c544d5c5ad96f9d10b79da
+      size: 4696767
+    - path: artifacts/prepare/train.tsv
+      md5: eed82551cdf610ba0f72b1c8bdb2092b
+      size: 19214552
