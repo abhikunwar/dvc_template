@@ -6,6 +6,7 @@ DVC project template
 ### STEP 01- Create a repository by using template repository
 
 ### STEP 02- Clone the new repository
+this is testing
 
 ### STEP 03- Create a conda environment after opening the repository in VSCODE
 
