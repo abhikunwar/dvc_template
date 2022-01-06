@@ -5,6 +5,9 @@ artifacts:
   PREPARE_DIR: prepare
   TRAIN_DATA: train.tsv
   TEST_DATA: test.tsv
+  featurize_dir: features
+  featurize_train_data: train.pkl
+  featurize_test_data: test.pkl
 source_data:
   data_dir: data
   data_file: data.xml
