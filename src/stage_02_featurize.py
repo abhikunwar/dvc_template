@@ -64,6 +64,12 @@ def main(config_path, params_path):
     train_word_binary_metrix = bag_of_words.transform(train_words)
     featurize.save_metrix(df_train,train_word_binary_metrix,featurize_train_data_path)
 
+    df_test = get_df(test_file_path)
+    test_words = df_test.text.str.lower().values.astype("U")
+
+    test_word_binary_metrix = bag_of_words.transform(test_words)
+    featurize.save_metrix(df_test,test_word_binary_metrix,featurize_test_data_path)
+
 
     
 

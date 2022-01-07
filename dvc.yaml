@@ -1,6 +1,6 @@
 # add stages here 
 stages:
-  stage_name:
+  stage_one:
     cmd: python src/stage_01_prepare.py --config=configs/config.yaml --params=params.yaml
     deps:
       - src/stage_01_prepare.py
@@ -12,3 +12,17 @@ stages:
     outs:
       - artifacts/prepare/train.tsv
       - artifacts/prepare/test.tsv
+
+  stage_two:
+    cmd: python src/stage_02_featurize.py --config=configs/config.yaml --params=params.yaml
+    deps:
+      - src/stage_02_featurize.py
+      - configs/config.yaml
+      - params.yaml
+      - artifacts/prepare/train.tsv
+      - artifacts/prepare/test.tsv
+      - src/utils/common.py
+      - src/utils/featurize.py
+    outs:
+      - artifacts/features/test.pkl
+      - artifacts/features/train.pkl
