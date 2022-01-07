@@ -8,6 +8,8 @@ from tqdm import tqdm
 import logging
 from src.utils.common import read_yaml, create_directories,get_df
 import random
+from sklearn.feature_extraction.text import CountVectorizer
+from src.utils import featurize
 
 
 STAGE = "STAGE_2" ## <<< change stage name 
@@ -54,8 +56,14 @@ def main(config_path, params_path):
 
     df_train = get_df(train_file_path)
     train_words = df_train.text.str.lower().values.astype("U")
-    print(type(train_words))
-    print(train_words[:20])
+    # print(type(train_words))
+    # print(train_words[:20])
+    bag_of_words = CountVectorizer(stop_words="english",max_features=max_features,ngram_range=(1,ngrams))
+    bag_of_words.fit(train_words)
+   # print(bag_of_words.vocabulary_)
+    train_word_binary_metrix = bag_of_words.transform(train_words)
+    featurize.save_metrix(df_train,train_word_binary_metrix,featurize_train_data_path)
+
 
     
 
