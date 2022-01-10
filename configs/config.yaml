@@ -8,7 +8,11 @@ artifacts:
   featurize_dir: features
   featurize_train_data: train.pkl
   featurize_test_data: test.pkl
+  model_dir: model
+  model_file: trained_model.pkl
 source_data:
   data_dir: data
   data_file: data.xml
+
+  
   

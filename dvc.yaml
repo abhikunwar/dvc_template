@@ -26,3 +26,22 @@ stages:
     outs:
       - artifacts/features/test.pkl
       - artifacts/features/train.pkl
+
+  train_stage:
+    cmd: python src/stage_03_train.py --config=configs/config.yaml --params=params.yaml
+    deps:
+      - src/stage_03_train.py
+      - configs/config.yaml
+      - params.yaml
+      - artifacts/features/train.pkl
+      - src/utils/common.py
+      - src/utils/models.py
+
+    params:
+      - train.n_est
+      - train.min_sample_split
+      - train.random_st
+      - train.n_jobs
+    outs:
+      - artifacts/model/trained_model.pkl
+        

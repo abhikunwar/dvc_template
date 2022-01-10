@@ -2,3 +2,8 @@
 featurize:
   max_feature: 3000
   ngrams: 2
+train:
+  n_est: 100
+  min_sample_split: 16
+  random_st: 41
+  n_jobs: 2  
