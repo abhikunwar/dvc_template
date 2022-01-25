@@ -14,5 +14,12 @@ source_data:
   data_dir: data
   data_file: data.xml
 
+metrix:
+  roc: auc_roc.json
+  prc: prc.json  
+
+scores:
+  SCORE: score.json  
+
   
   
