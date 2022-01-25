@@ -55,5 +55,8 @@ stages:
       - src/utils/common.py
       - artifacts/model/trained_model.pkl
     outs:
-      - score.json      
+      - score.json
+
+  run_plot_command:
+    cmd: dvc plots diff       
         
