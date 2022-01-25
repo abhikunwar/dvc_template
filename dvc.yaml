@@ -44,4 +44,16 @@ stages:
       - train.n_jobs
     outs:
       - artifacts/model/trained_model.pkl
+
+  eval_state:
+    cmd: python src/stage_04_evaluation.py --config=configs/config.yaml --params=params.yaml
+    deps:
+      - src/stage_04_evaluation.py
+      - configs/config.yaml
+      - params.yaml
+      - artifacts/features/test.pkl
+      - src/utils/common.py
+      - artifacts/model/trained_model.pkl
+    outs:
+      - score.json      
         

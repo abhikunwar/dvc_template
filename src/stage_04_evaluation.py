@@ -72,7 +72,7 @@ def evaluate(config_path,params_path):
 
     # print(df.head())
 
-    print(scores_p_r)
+    # print(scores_p_r)
 
     with open(score_file_name,"w") as f:
         json.dump(scores_p_r,f,indent=4)
